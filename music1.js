@@ -24,9 +24,9 @@ new Vue({
 
 })
 
-Vue.component('task', {
+Vue.component('song', {
     template: `
-        <div class="task">
+        <div class="song">
             <slot></slot>
         </div>
     `
@@ -35,16 +35,16 @@ Vue.component('task', {
 new Vue({
     el: '#demo-1',
     data: {
-        tasks: [
-            'study',
-            'Shower',
-            'walk',
-            'Nap'
+        songs: [
+            'Sunflower',
+            'Human',
+            'Happier',
+            'white'
         ]
     }
 });
 
-Vue.component('task', {
+Vue.component('song', {
     template: `
         <li class="list-group-item">
             <slot></slot>
@@ -52,24 +52,31 @@ Vue.component('task', {
     `
 });
 
-Vue.component('task-list', {
+Vue.component('song-list', {
     template: `
         <ul class="list-group">
-            <task v-for="task in tasks">{{ task }}</task>
+            <song v-for="song in songs">{{ song }}</song>
+            
         </ul>
     `,
     data(){
         return {
-            tasks: [
-                'Make bed',
-                'Shower',
-                'Feed cats',
-                'Nap'
+            songs: [
+                'Sunflower',
+                'Human',
+                'Happier',
+                'white'
             ]
         }
     }
+
 });
 
 new Vue({
     el: '#demo-1'
 });
+
+
+function myFunction(x) {
+  x.classList.toggle("fa-thumbs-down");
+}
