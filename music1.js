@@ -56,7 +56,7 @@ Vue.component('song-list', {
     template: `
         <ul class="list-group">
             <song v-for="song in songs">{{ song }}</song>
-            
+
         </ul>
     `,
     data(){
@@ -80,3 +80,13 @@ new Vue({
 function myFunction(x) {
   x.classList.toggle("fa-thumbs-down");
 }
+
+new Vue({
+  el: '#users',
+  data: {
+    users: [
+      { name: 'Foo Bar', email: 'foo@bar.com' },
+      { name: 'John Doh', email: 'john@doh.com' }
+    ]
+  }
+})
