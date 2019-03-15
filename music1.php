@@ -22,7 +22,7 @@
 </head>
 
 <body >
-    <h1 id="title">Music</h1>
+    <h1 id="title" >Music</h1>
     <br />
 
     <fieldset>
@@ -47,18 +47,33 @@
         </br>
         <button @click = 'addSong' >add</button>
         <button @click = 'removeSong' >Remove</button>
-        
+
 
     </div>
 </fieldset>
 <div class="card-body" id="demo-1">
+                 <fieldset>
+                     <song-list>
+                         <song :completed="true" time="10"></song>
+                         <song :completed="false" time="5"></song>
+                         <song :completed="true" time="1"></song>
+                     </song-list>
+
+                 </fieldset>
+             </div>
+             <div id="button">
+               <button-counter></button-counter>
+                <button-counter></button-counter>
+                 <button-counter></button-counter>
+             </div>
+<!-- <div class="card-body" id="demo-1">
     <fieldset>
 
         <h5>Songlist</h5>
         <song-list></song-list>
 
     </fieldset>
-</div>
+</div> -->
 
 
 <script type="text/javascript" src="vue.min.js"></script>
