@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>grid</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link rel="stylesheet" href="grid.css">
+    </head>
+    <body>
+
+        <section id="js-grid-list" class="grid-list" v-cloak>
+
+	<div class="tool-bar">
+
+		<a class="list-icon" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}" title="List"></a>
+		<a class="grid-icon" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid"></a>
+	</div>
+
+
+	<ul v-if="layout === 'grid'" class="grid">
+
+		<li v-for="blog in blog_posts">
+			<a v-bind:href="blog.url" v-bind:style="{ backgroundImage: 'url(' + blog.image.large + ')' }" target="_blank"></a>
+		</li>
+	</ul>
+
+	<ul v-if="layout === 'list'" class="list">
+
+		<li v-for="blog in blog_posts">
+			<a v-bind:href="blog.url" target="_blank">
+				<img v-bind:src="blog.image.small">
+				<p>{{blog.title}}</p>
+			</a>
+		</li>
+	</ul>
+
+</section>
+
+
+
+
+    <script type="text/javascript" src="vue.min.js"></script>
+    <script "text/javascript" src="grid.js"></script>
+
+    </body>
+</html>
